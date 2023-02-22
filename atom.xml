@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>大白</title>
+  
+  
+  <link href="https://dabai5269.top/atom.xml" rel="self"/>
+  
+  <link href="https://dabai5269.top/"/>
+  <updated>2023-02-21T14:04:43.480Z</updated>
+  <id>https://dabai5269.top/</id>
+  
+  <author>
+    <name>大白</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1</title>
+    <link href="https://dabai5269.top/post/83dcefb7.html"/>
+    <id>https://dabai5269.top/post/83dcefb7.html</id>
+    <published>2023-02-21T14:03:52.000Z</published>
+    <updated>2023-02-21T14:04:43.480Z</updated>
+    
+    <content type="html"><![CDATA[<p>111111</p>]]></content>
+    
+    
+    <summary type="html">1111</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>搭建靶场</title>
+    <link href="https://dabai5269.top/post/5f593b8b.html"/>
+    <id>https://dabai5269.top/post/5f593b8b.html</id>
+    <published>2023-02-11T06:16:25.000Z</published>
+    <updated>2023-02-13T04:35:44.991Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="sql-labs靶场环境搭建"><a href="#sql-labs靶场环境搭建" class="headerlink" title="sql-labs靶场环境搭建"></a>sql-labs靶场环境搭建</h1><h2 id="SQLI-LAB下载地址"><a href="#SQLI-LAB下载地址" class="headerlink" title="SQLI-LAB下载地址"></a>SQLI-LAB下载地址</h2><p><a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></p><h2 id="WEB环境搭建"><a href="#WEB环境搭建" class="headerlink" title="WEB环境搭建"></a>WEB环境搭建</h2><p>在安装靶场之前，我们还需要搭建web运行环境（phpstudy）：<a href="https://www.xp.cn/download.html">https://www.xp.cn/download.html</a></p><h2 id="Sql-labs靶场环境搭建"><a href="#Sql-labs靶场环境搭建" class="headerlink" title="Sql-labs靶场环境搭建"></a>Sql-labs靶场环境搭建</h2><p>打开根目录</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-11%20142815.png" alt="屏幕截图 2023-02-11 142815"></p><p>解压到WWW目录</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-11%20142946.png" alt="屏幕截图 2023-02-11 142946"></p><p>在sqli-labs-master找到sqli-connections然后打开db-creds.inc，将$dbpass&#x3D;‘’改为$dbpass&#x3D;‘root’保存<img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-11%20143139.png" alt="屏幕截图 2023-02-11 143139"></p><p> 完成后打开phpstudy，启动Apache和Mysql</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-11%20143514.png" alt="屏幕截图 2023-02-11 143514"></p><p>访问：<a href="http://127.0.0.1/sqli-labs-master/%E6%89%93%E5%BC%80%E9%A6%96%E9%A1%B5">http://127.0.0.1/sqli-labs-master/打开首页</a></p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-11%20143625.png" alt="屏幕截图 2023-02-11 143625"></p><p>点击Setup&#x2F;reset Database for labs使其自动创建数据库，如图</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/b91c8481328444a7bc8f0423b1e65c3a.png" alt="b91c8481328444a7bc8f0423b1e65c3a"></p><h1 id="Upload-labs靶场的搭建"><a href="#Upload-labs靶场的搭建" class="headerlink" title="Upload-labs靶场的搭建"></a>Upload-labs靶场的搭建</h1><p>下载源码：<a href="https://github.com/Tj1ngwe1/upload-labs">https://github.com/Tj1ngwe1/upload-labs</a></p><p>解压到WWW目录</p><p>访问：<a href="http://127.0.0.1/upload-labs-master/">http://127.0.0.1/upload-labs-master/</a></p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-11%20144714.png" alt="屏幕截图 2023-02-11 144714"></p>]]></content>
+    
+    
+    <summary type="html">sql-labs、upload-labs</summary>
+    
+    
+    
+    
+    <category term="靶场" scheme="https://dabai5269.top/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP</title>
+    <link href="https://dabai5269.top/post/c036635b.html"/>
+    <id>https://dabai5269.top/post/c036635b.html</id>
+    <published>2023-02-05T07:13:36.000Z</published>
+    <updated>2023-02-13T04:37:43.542Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;我的第一段 PHP 脚本！&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html</span><br></pre></td></tr></table></figure><p>PHP 脚本以 <em><?php* 开头，以 *?></em> 结尾：</p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 此处是 PHP 代码</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h2 id="Local-和-Global-作用域"><a href="#Local-和-Global-作用域" class="headerlink" title="Local 和 Global 作用域"></a>Local 和 Global 作用域</h2><p>函数<em>之外</em>声明的变量拥有 Global 作用域，只能在函数以外进行访问。</p><p>函数<em>内部</em>声明的变量拥有 LOCAL 作用域，只能在函数内部进行访问。</p><p>下面的例子测试了带有局部和全局作用域的变量：</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-05%20152809.png" alt="屏幕截图 2023-02-05 152809"></p>]]></content>
+    
+    
+    <summary type="html">PHP基础</summary>
+    
+    
+    
+    
+    <category term="PHP" scheme="https://dabai5269.top/tags/PHP/"/>
+    
+  </entry>
+  
+</feed>
