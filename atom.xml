@@ -6,7 +6,7 @@
   <link href="https://dabai5269.top/atom.xml" rel="self"/>
   
   <link href="https://dabai5269.top/"/>
-  <updated>2023-04-03T13:48:38.737Z</updated>
+  <updated>2023-04-07T07:17:01.939Z</updated>
   <id>https://dabai5269.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>upload-labs</title>
+    <link href="https://dabai5269.top/post/80f02bc5.html"/>
+    <id>https://dabai5269.top/post/80f02bc5.html</id>
+    <published>2023-04-07T05:32:14.000Z</published>
+    <updated>2023-04-07T07:17:01.939Z</updated>
+    
+    <content type="html"><![CDATA[<p>文件上传漏洞被利用需要<strong>两个前提条件</strong>：</p><p>1、文件能上传成功</p><p>2、攻击者能知道文件路径</p><p>凡是上传图片并显示的关卡，都有<strong>三种方式可以知道文件路径</strong></p><p>1、最简单直接的，在没显示出来的图片上右键选择“复制图像链接”，可以得到文件的绝对路径</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/123c53e523fa4a86aa967a84de16ba67.png" alt="123c53e523fa4a86aa967a84de16ba67"></p><p>2、网页上右键选择“查看页面源代码”，源代码中显示文件的相对路径</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407135835211.png" alt="image-20230407135835211"></p><p>3、如果是用burpsuite上传的文件，response报文中也会显示文件的相对路径。</p><h2 id="Pass-01"><a href="#Pass-01" class="headerlink" title="Pass-01"></a>Pass-01</h2><h3 id="方法1：浏览器disable-JS"><a href="#方法1：浏览器disable-JS" class="headerlink" title="方法1：浏览器disable JS"></a>方法1：浏览器disable JS</h3><p>firefox可以安装一个叫Script Switch的插件，安装成功之后，就是下图右上角小红框里那个图标，使其处在JS disabled状态，上传x.php。出现下图这样没加载成功的图片表示webshell已经上传成功。</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/92b2e5477ba24b1eabbe94cf11f0b4a0.png" alt="92b2e5477ba24b1eabbe94cf11f0b4a0"></p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/123c53e523fa4a86aa967a84de16ba67.png" alt="123c53e523fa4a86aa967a84de16ba67"></p><p>到服务器上看看，上传成功的webshell在 <strong>upload-labs目录\upload</strong> 文件夹下</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/1efdc543145546be85193f2cb585990b.png" alt="1efdc543145546be85193f2cb585990b"></p><p>蚁剑连接也可以看到已经上传</p><h3 id="方法2：-bp抓包修改后缀"><a href="#方法2：-bp抓包修改后缀" class="headerlink" title="方法2： bp抓包修改后缀"></a>方法2： bp抓包修改后缀</h3><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/b6b05f1cc2d749eea3164807c384fe7f.png" alt="b6b05f1cc2d749eea3164807c384fe7f"></p><p>蚁剑连接即可看到文件已经上传</p><h2 id="Pass-02"><a href="#Pass-02" class="headerlink" title="Pass-02"></a>Pass-02</h2><h3 id="方法1：上传2-png-再修改后缀即可"><a href="#方法1：上传2-png-再修改后缀即可" class="headerlink" title="方法1：上传2.png,再修改后缀即可"></a>方法1：上传<strong>2.png</strong>,再修改后缀即可</h3><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/b6b05f1cc2d749eea3164807c384fe7f.png" alt="b6b05f1cc2d749eea3164807c384fe7f"></p><p>复制图片连接，去蚁剑连接</p><h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><p>上传·2.php,将抓到的包发送到<strong>repeater</strong>，然后把<strong>Content-Type</strong>的值改为<strong>image&#x2F;png</strong></p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/f1090bf94447411ba28ea3631b9e7e69.png" alt="f1090bf94447411ba28ea3631b9e7e69"></p><h2 id="Pass-03"><a href="#Pass-03" class="headerlink" title="Pass-03"></a>Pass-03</h2><p>首先上传个1.php，发现页面提示是”不允许上传……后缀文件“，并且burpsuite有抓到包，初步判断，这关可能是后端文件后缀黑名单过滤。</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407140010914.png" alt="image-20230407140010914"></p><p>payload写一些有可能被解析为php的文件后缀的字符，大小写绕过，双写绕过，一些利用操作系统特性（比如服务器是windows系统的话，结尾加点，加空格，加::$DATA，后缀某几个字母大写），web容器解析漏洞绕过黑名单的后缀……</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407141147135.png" alt="image-20230407141147135"></p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407141107881.png" alt="image-20230407141107881"></p><p>上图的文件后缀是正常的，是有用的，用webshell管理工具连接的时候，文件名写202304071406293829.php就行</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407141251693.png" alt="image-20230407141251693"></p><h2 id="Pass-04"><a href="#Pass-04" class="headerlink" title="Pass-04"></a>Pass-04</h2><p>这关上传了1.php之后，只是提示这个文件不能上传。</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407145416298.png" alt="image-20230407145416298"></p><p>把后缀改成png之后，可以上传成功。可以初步判断，本关不检查文件内容，检查点应该在<strong>Content-Type</strong>或者<strong>文件后缀</strong>，或者两者都有。</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407145704699.png" alt="image-20230407145704699"></p><p>先看看Content-Type有无影响。把Content-Type从image&#x2F;png改成application&#x2F;octet-stream，发送之后，发现文件依然能上传成功，说明本关Content-Type无影响。</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407145850092.png" alt="image-20230407145850092"></p><p>接下来判断一下文件后缀是黑名单过滤还是白名单过滤：</p><p>文件后缀改成.xxx，发送后发现文件上传成功，说明本关还是文件后缀黑名单过滤</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407145939292.png" alt="image-20230407145939292"></p><p>HTTP EXP：将文件后缀名改为“<strong>点+空格+点</strong>”的格式，这样<strong>file_ext会变为空</strong>，成功绕过黑名单上传。<strong>Windows会自动删除文件名最后的点</strong>，最后变为2.php。</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230407151322154.png" alt="image-20230407151322154"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;upload_file&quot;; filename=&quot;2.php. .&quot;</span><br></pre></td></tr></table></figure><h2 id="Pass-05"><a href="#Pass-05" class="headerlink" title="Pass-05"></a>Pass-05</h2><p>和Pass-04一样，代码中只过滤了一次点，删除了空格和::$DATA，将文件后缀改为小写，黑名单等，使用Pass-04的方法绕过即可。但黑名单中屏蔽了.htaccess文件。</p><p>HTTP EXP：文件名改为“2.php. . ”。</p>]]></content>
+    
+    
+    <summary type="html">upload-labs前五关</summary>
+    
+    
+    
+    
+    <category term="靶场" scheme="https://dabai5269.top/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>misc50</title>
