@@ -55,19 +55,6 @@
     
     
     <entry>
-      <title>CTFSHOW-WEB入门-信息搜集</title>
-      <link href="/post/50f2f890.html"/>
-      <url>/post/50f2f890.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>sqli-labs</title>
       <link href="/post/b3432909.html"/>
       <url>/post/b3432909.html</url>
@@ -111,25 +98,6 @@
         <tags>
             
             <tag> 靶场 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>PHP</title>
-      <link href="/post/c036635b.html"/>
-      <url>/post/c036635b.html</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;我的第一段 PHP 脚本！&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html</span><br></pre></td></tr></table></figure><p>PHP 脚本以 <em><?php* 开头，以 *?></em> 结尾：</p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 此处是 PHP 代码</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h2 id="Local-和-Global-作用域"><a href="#Local-和-Global-作用域" class="headerlink" title="Local 和 Global 作用域"></a>Local 和 Global 作用域</h2><p>函数<em>之外</em>声明的变量拥有 Global 作用域，只能在函数以外进行访问。</p><p>函数<em>内部</em>声明的变量拥有 LOCAL 作用域，只能在函数内部进行访问。</p><p>下面的例子测试了带有局部和全局作用域的变量：</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-02-05%20152809.png" alt="屏幕截图 2023-02-05 152809"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> PHP </tag>
             
         </tags>
       
