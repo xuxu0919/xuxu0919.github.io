@@ -6,7 +6,7 @@
   <link href="https://dabai5269.top/atom.xml" rel="self"/>
   
   <link href="https://dabai5269.top/"/>
-  <updated>2023-05-31T12:19:26.207Z</updated>
+  <updated>2023-05-31T12:43:20.551Z</updated>
   <id>https://dabai5269.top/</id>
   
   <author>
@@ -17,16 +17,16 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>PHP之preg_match绕过</title>
+    <title>preg_match绕过和神奇的unicode编码</title>
     <link href="https://dabai5269.top/post/6c198c6.html"/>
     <id>https://dabai5269.top/post/6c198c6.html</id>
     <published>2023-05-12T07:19:06.000Z</published>
-    <updated>2023-05-31T12:19:26.207Z</updated>
+    <updated>2023-05-31T12:43:20.551Z</updated>
     
-    <content type="html"><![CDATA[<p>404</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="什么是preg-match"><a href="#什么是preg-match" class="headerlink" title="什么是preg_match"></a>什么是preg_match</h2><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230531203342124.png" alt="image-20230531203342124"></p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230531203403865.png" alt="image-20230531203403865"></p><h2 id="绕过方法"><a href="#绕过方法" class="headerlink" title="绕过方法"></a>绕过方法</h2><h3 id="1、数组绕过"><a href="#1、数组绕过" class="headerlink" title="1、数组绕过"></a>1、数组绕过</h3><p>preg_match只能处理字符串，当传入的subject是数组时会返回false</p><h3 id="2、PCRE回溯次数限制"><a href="#2、PCRE回溯次数限制" class="headerlink" title="2、PCRE回溯次数限制"></a>2、PCRE回溯次数限制</h3><p><a href="https://www.leavesongs.com/PENETRATION/use-pcre-backtrack-limit-to-bypass-restrict.html">戳我</a></p><h2 id="神奇的Unicode编码"><a href="#神奇的Unicode编码" class="headerlink" title="神奇的Unicode编码"></a>神奇的Unicode编码</h2><p>这个符号竟然可以从右往左打印字符串</p><p><a href="https://xiinnn.com/article/22d50835.html">看我看我</a></p><p>在网页中复制下来，方框中的</p><p><img src="https://dabai-1316520326.cos.ap-nanjing.myqcloud.com/img/image-20230531204146074.png" alt="image-20230531204146074"></p><p>放进编译器中，使用urlencode进行输出即可</p>]]></content>
     
     
-    <summary type="html">正则匹配绕过</summary>
+    <summary type="html">正则匹配绕过和unicode编码</summary>
     
     
     
